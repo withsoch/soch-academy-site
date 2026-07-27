@@ -559,20 +559,63 @@ section { padding: 5rem 0; }
 .metric-band {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   margin-top: 2.5rem;
 }
 .metric-box {
-  background: rgba(255,255,255,0.06);
+  background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
   border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 0.875rem;
-  padding: 1.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #fff;
+  border-radius: 1rem;
+  padding: 1.6rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-soft), border-color 0.35s, background 0.35s;
 }
-.metric-box::before { content: '↗'; display: block; color: var(--brand); margin-bottom: 0.5rem; font-size: 1.1rem; }
+.metric-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,92,53,0.5);
+  background: linear-gradient(160deg, rgba(255,92,53,0.11), rgba(255,255,255,0.025));
+}
+.metric-box::after {
+  content: '';
+  position: absolute;
+  right: -34px;
+  bottom: -34px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,92,53,0.12), transparent 70%);
+  pointer-events: none;
+}
+.metric-arrow {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,92,53,0.16);
+  color: var(--brand);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+.metric-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.3;
+}
+.metric-sub {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.55;
+  margin-top: 0.55rem;
+}
 
 /* ── Foundation box ─────────────────────────────────────── */
 .foundation-box {
@@ -582,7 +625,8 @@ section { padding: 5rem 0; }
   padding: 2.25rem;
   margin-top: 2rem;
 }
-.foundation-box h3 { color: var(--brand); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.625rem; }
+/* div.foundation-box wins specificity over a nested .week-module h3 (same-specificity, later-in-source) that was greying the heading */
+div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 0.625rem; }
 .foundation-box > p { font-size: 0.96rem; color: rgba(255,255,255,0.8); }
 .foundation-box ul {
   list-style: none;
