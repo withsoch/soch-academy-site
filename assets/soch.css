@@ -366,6 +366,8 @@ section { padding: 5rem 0; }
   line-height: 1.1;
 }
 .track-price span { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+.price-note { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--slate); margin-top: 0.5rem; line-height: 1.5; }
+.price-note b { color: var(--brand); font-weight: 700; }
 
 /* ── Module (accordion) ─────────────────────────────────── */
 .module {
@@ -488,7 +490,9 @@ section { padding: 5rem 0; }
   line-height: 1;
   margin: 0.75rem 0 0.5rem;
 }
+.price-card .price-amt span { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--muted); font-weight: 400; }
 .price-card p { font-size: 0.95rem; color: var(--slate); }
+.price-card p b { color: var(--ink); font-weight: 700; }
 
 /* ── Pricing highlight box ──────────────────────────────── */
 .pricing-note {
@@ -814,6 +818,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   margin: 0.75rem 0 0.5rem;
   line-height: 1;
 }
+.pcard .pr span { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
 .pcard p { font-size: 0.95rem; color: var(--slate); }
 
 /* ── Steps (process) ────────────────────────────────────── */
