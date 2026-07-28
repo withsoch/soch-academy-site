@@ -1,11 +1,11 @@
 /* ============================================================
    Soch AI Offer Pages — Design System
-   Mirrors sochcatalystweb: Fraunces serif + Inter sans,
+   Brand type: Poppins (headings) + Instrument Sans (body),
    warm cream/mist palette, forest green CTA, charcoal footer.
    ============================================================ */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,540;1,9..144,400;1,9..144,540&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
 
 /* Tokens */
 :root {
@@ -30,7 +30,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.62;
   background: var(--white);
@@ -45,16 +45,16 @@ a { color: inherit; }
 
 /* ── Typography ─────────────────────────────────────────── */
 h1, h2, h3, h4 {
-  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   color: var(--ink);
-  font-weight: 540;
+  font-weight: 600;
   letter-spacing: -0.012em;
   line-height: 1.08;
   text-wrap: balance;
 }
 h1 { font-size: clamp(2.4rem, 1.4rem + 3.8vw, 4.3rem); }
 h2 { font-size: clamp(1.85rem, 1.2rem + 2.1vw, 3rem); }
-h3 { font-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.5rem); line-height: 1.18; font-weight: 560; }
+h3 { font-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.5rem); line-height: 1.18; font-weight: 600; }
 p  { text-wrap: pretty; }
 
 .lead {
@@ -62,7 +62,7 @@ p  { text-wrap: pretty; }
   line-height: 1.62;
   color: var(--slate);
 }
-.display { font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem); line-height: 1.02; letter-spacing: -0.018em; }
+.display { font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem); line-height: 1.04; letter-spacing: -0.018em; font-weight: 700; }
 
 /* ── Layout ─────────────────────────────────────────────── */
 .container {
@@ -98,7 +98,7 @@ section { padding: 5rem 0; }
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--ink);
@@ -136,7 +136,7 @@ section { padding: 5rem 0; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   padding: 0.72rem 1.5rem;
@@ -299,7 +299,7 @@ section { padding: 5rem 0; }
 .chip {
   display: inline-flex;
   align-items: center;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--ink);
@@ -318,9 +318,9 @@ section { padding: 5rem 0; }
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .stat-num {
-  font-family: 'Fraunces', serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-size: clamp(2.2rem, 2vw + 1.5rem, 3.2rem);
-  font-weight: 540;
+  font-weight: 600;
   color: var(--brand);
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -348,7 +348,7 @@ section { padding: 5rem 0; }
 .track-card-body { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; gap: 0.75rem; }
 .track-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .track-tag {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -359,14 +359,14 @@ section { padding: 5rem 0; }
   padding: 0.28rem 0.75rem;
 }
 .track-price {
-  font-family: 'Fraunces', serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-size: 1.9rem;
-  font-weight: 540;
+  font-weight: 600;
   color: var(--brand);
   line-height: 1.1;
 }
-.track-price span { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
-.price-note { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--slate); margin-top: 0.5rem; line-height: 1.5; }
+.track-price span { font-family: 'Instrument Sans', sans-serif; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+.price-note { font-family: 'Instrument Sans', sans-serif; font-size: 0.85rem; color: var(--slate); margin-top: 0.5rem; line-height: 1.5; }
 .price-note b { color: var(--brand); font-weight: 700; }
 
 /* ── Module (accordion) ─────────────────────────────────── */
@@ -388,7 +388,7 @@ section { padding: 5rem 0; }
 }
 .module summary::-webkit-details-marker { display: none; }
 .module-num {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.06em;
@@ -399,7 +399,7 @@ section { padding: 5rem 0; }
   padding: 0.4rem 0.75rem;
   flex-shrink: 0;
 }
-.module-title h3 { font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--ink); }
+.module-title h3 { font-size: 1.1rem; font-family: 'Instrument Sans', sans-serif; font-weight: 600; color: var(--ink); }
 .module-title p  { font-size: 0.88rem; color: var(--muted); margin-top: 0.15rem; }
 .module-plus {
   margin-left: auto;
@@ -445,7 +445,7 @@ section { padding: 5rem 0; }
   padding: 0.875rem 1rem;
   font-size: 0.9rem;
 }
-.dep-item b { font-family: 'Inter', sans-serif; font-size: 0.95rem; display: block; color: var(--ink); margin-bottom: 0.2rem; }
+.dep-item b { font-family: 'Instrument Sans', sans-serif; font-size: 0.95rem; display: block; color: var(--ink); margin-bottom: 0.2rem; }
 
 /* ── Cohort boxes ───────────────────────────────────────── */
 .cohort-grid {
@@ -461,14 +461,14 @@ section { padding: 5rem 0; }
   padding: 1.75rem;
 }
 .co-big {
-  font-family: 'Fraunces', serif;
-  font-weight: 540;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
   font-size: 2.5rem;
   color: var(--brand);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
-.co-box h3 { color: #fff; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.4rem; }
+.co-box h3 { color: #fff; font-size: 1.1rem; font-family: 'Instrument Sans', sans-serif; font-weight: 600; margin-bottom: 0.4rem; }
 .co-box p  { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
 .seatnote  { margin-top: 1.75rem; font-size: 0.92rem; color: rgba(255,255,255,0.55); }
 
@@ -481,16 +481,16 @@ section { padding: 5rem 0; }
   transition: border-color 0.2s;
 }
 .price-card:hover { border-color: rgba(28,43,38,0.25); }
-.price-card h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--ink); }
+.price-card h3 { font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--ink); }
 .price-card .price-amt {
-  font-family: 'Fraunces', serif;
-  font-weight: 540;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
   font-size: 2rem;
   color: var(--brand);
   line-height: 1;
   margin: 0.75rem 0 0.5rem;
 }
-.price-card .price-amt span { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+.price-card .price-amt span { font-family: 'Instrument Sans', sans-serif; font-size: 0.9rem; color: var(--muted); font-weight: 400; }
 .price-card p { font-size: 0.95rem; color: var(--slate); }
 .price-card p b { color: var(--ink); font-weight: 700; }
 
@@ -506,7 +506,7 @@ section { padding: 5rem 0; }
   align-items: center;
   flex-wrap: wrap;
 }
-.pricing-note h3 { color: var(--brand); font-size: 1.2rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+.pricing-note h3 { color: var(--brand); font-size: 1.2rem; font-family: 'Instrument Sans', sans-serif; font-weight: 600; }
 .pricing-note p  { font-size: 0.96rem; color: rgba(255,255,255,0.8); margin-top: 0.5rem; }
 
 /* ── Case cards ─────────────────────────────────────────── */
@@ -519,7 +519,7 @@ section { padding: 5rem 0; }
 .case-card img { width: 100%; height: 11rem; object-fit: cover; }
 .case-card-body { padding: 1.5rem; }
 .case-tag {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -548,7 +548,7 @@ section { padding: 5rem 0; }
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 1.5rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 1rem;
   color: var(--ink);
@@ -608,7 +608,7 @@ section { padding: 5rem 0; }
   margin-bottom: 1.1rem;
 }
 .metric-name {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: #fff;
@@ -630,7 +630,7 @@ section { padding: 5rem 0; }
   margin-top: 2rem;
 }
 /* div.foundation-box wins specificity over a nested .week-module h3 (same-specificity, later-in-source) that was greying the heading */
-div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 0.625rem; }
+div.foundation-box h3 { color: #fff; font-family: 'Instrument Sans', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 0.625rem; }
 .foundation-box > p { font-size: 0.96rem; color: rgba(255,255,255,0.8); }
 .foundation-box ul {
   list-style: none;
@@ -677,7 +677,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   padding: 2rem;
 }
 .week-badge {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -689,7 +689,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   display: inline-block;
   margin-bottom: 0.875rem;
 }
-.week-module h3 { font-size: 1.15rem; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+.week-module h3 { font-size: 1.15rem; font-family: 'Instrument Sans', sans-serif; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
 .week-module > p { font-size: 0.96rem; color: var(--slate); }
 .labs-grid {
   display: grid;
@@ -702,7 +702,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   border-radius: 0.75rem;
   padding: 1.25rem;
 }
-.lab-card b { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--ink); display: block; margin-bottom: 0.4rem; }
+.lab-card b { font-family: 'Instrument Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--ink); display: block; margin-bottom: 0.4rem; }
 .lab-card p  { font-size: 0.88rem; color: var(--slate); }
 
 /* ── skill box ──────────────────────────────────────────── */
@@ -714,7 +714,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   padding: 1.5rem;
 }
 .skill-box .skill-label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--ink);
@@ -761,7 +761,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   flex-direction: column;
 }
 .reddit-sub {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -809,16 +809,16 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   border-radius: 0.875rem;
   padding: 1.75rem;
 }
-.pcard h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--ink); }
+.pcard h3 { font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--ink); }
 .pcard .pr {
-  font-family: 'Fraunces', serif;
-  font-weight: 540;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
   font-size: 2rem;
   color: var(--brand);
   margin: 0.75rem 0 0.5rem;
   line-height: 1;
 }
-.pcard .pr span { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+.pcard .pr span { font-family: 'Instrument Sans', sans-serif; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
 .pcard p { font-size: 0.95rem; color: var(--slate); }
 
 /* ── Steps (process) ────────────────────────────────────── */
@@ -835,7 +835,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   padding: 1.75rem;
 }
 .step-num {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.12em;
@@ -843,7 +843,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   color: var(--brand);
   margin-bottom: 0.75rem;
 }
-.step-box h3 { color: #fff; font-size: 1.05rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.5rem; }
+.step-box h3 { color: #fff; font-size: 1.05rem; font-family: 'Instrument Sans', sans-serif; font-weight: 600; margin-bottom: 0.5rem; }
 .step-box p  { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
 
 /* ── Contact form ───────────────────────────────────────── */
@@ -856,7 +856,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
 @media (max-width: 640px) { .contact-form { grid-template-columns: 1fr; } }
 .contact-form label {
   display: block;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
@@ -873,7 +873,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 0.96rem;
   transition: border-color 0.15s;
 }
@@ -910,7 +910,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
 .footer-brand img { height: 34px; }
 .footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-top: 1rem; max-width: 18rem; }
 .footer-col h4 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
@@ -958,7 +958,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   text-align: center;
   padding: 0.625rem 1rem;
   font-size: 0.88rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
 }
 .ann-bar b  { color: var(--brand); font-weight: 700; }
 .ann-bar a  { color: rgba(255,255,255,0.9); text-decoration: underline; text-underline-offset: 3px; }
@@ -986,7 +986,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   color: #fff;
 }
 .review-card.featured:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
-.review-card h2 { font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.3rem; }
+.review-card h2 { font-size: 1.1rem; font-family: 'Instrument Sans', sans-serif; font-weight: 600; margin-bottom: 0.3rem; }
 .review-card span { font-size: 0.9rem; opacity: 0.75; }
 
 /* ── Inline script helper ───────────────────────────────── */
@@ -1059,7 +1059,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   padding: 0.85rem 1.1rem;
   box-shadow: 0 8px 24px rgba(16,49,41,0.05);
 }
-.wv-card b { display: block; color: var(--ink); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1rem; }
+.wv-card b { display: block; color: var(--ink); font-family: 'Instrument Sans', sans-serif; font-weight: 700; font-size: 1rem; }
 .wv-card span { font-size: 0.86rem; color: var(--slate); }
 
 /* ── Proof strip: quote + founding-cohort panel ─────────── */
@@ -1078,7 +1078,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
   margin: 0;
 }
 .proof-mark {
-  font-family: 'Fraunces', serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-size: 4rem;
   line-height: 0.7;
   color: var(--brand);
@@ -1087,7 +1087,7 @@ div.foundation-box h3 { color: #fff; font-family: 'Inter', sans-serif; font-weig
 }
 .proof-quote blockquote {
   margin: 0;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
   line-height: 1.4;
   color: var(--ink);
