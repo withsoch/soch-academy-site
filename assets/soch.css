@@ -62,7 +62,7 @@ p  { text-wrap: pretty; }
   line-height: 1.62;
   color: var(--slate);
 }
-.display { font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem); line-height: 1.04; letter-spacing: -0.018em; font-weight: 700; }
+.display { font-size: clamp(2.4rem, 1.5rem + 3.6vw, 4.2rem); line-height: 1.06; letter-spacing: -0.02em; font-weight: 500; }
 
 /* ── Layout ─────────────────────────────────────────────── */
 .container {
@@ -153,8 +153,8 @@ section { padding: 5rem 0; }
 .btn-dark { background: var(--ink); color: #fff; }
 .btn-dark:hover { background: var(--ink-soft); transform: translateY(-1px); }
 
-.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
-.btn-outline:hover { border-color: var(--ink); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.btn-outline:hover { background: var(--ink); color: #fff; }
 
 .btn-ghost-light { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
 .btn-ghost-light:hover { background: rgba(255,255,255,0.1); }
@@ -1135,3 +1135,68 @@ div.foundation-box h3 { color: #fff; font-family: 'Instrument Sans', sans-serif;
   .fade-up { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ============================================================
+   Feedback round 3 — new components
+   ============================================================ */
+
+/* Proof quote (wide, centered) */
+.proof-quote-wide { max-width: 60rem; margin-inline: auto; text-align: center; }
+.proof-quote-wide .proof-mark { text-align: center; }
+
+/* Single stat */
+.stat-solo { text-align: center; max-width: 44rem; margin: 0 auto; }
+.stat-solo .stat-num { font-size: clamp(3rem, 2rem + 4vw, 4.5rem); }
+.stat-solo .stat-desc { font-size: 1.05rem; color: rgba(255,255,255,0.72); margin-top: 0.5rem; }
+
+/* Why-now: bigger heading */
+.why-heading { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.4rem); line-height: 1.08; }
+
+/* Venn diagram (Projects / Cowork / Skills) */
+.venn { position: relative; width: 340px; max-width: 100%; height: 320px; margin: 0 auto; }
+.venn-circle { position: absolute; width: 190px; height: 190px; border-radius: 50%;
+  background: rgba(255,92,53,0.16); border: 1.6px solid rgba(255,92,53,0.55); mix-blend-mode: multiply; }
+.venn-a { left: 75px; top: 6px; }
+.venn-b { left: 8px; top: 124px; }
+.venn-c { left: 142px; top: 124px; }
+.venn-label { position: absolute; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--ink); z-index: 4; }
+.venn-label-a { left: 0; right: 0; top: 44px; text-align: center; }
+.venn-label-b { left: 30px; bottom: 40px; }
+.venn-label-c { right: 30px; bottom: 40px; text-align: right; }
+.venn-center { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-42%); text-align: center;
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--brand); line-height: 1.15; z-index: 5; }
+
+/* Step arrows between how-we-work tiles (desktop row only) */
+@media (min-width: 1024px) {
+  .steps-arrows .step-box { position: relative; }
+  .steps-arrows .step-box:not(:last-child)::after {
+    content: '→'; position: absolute; top: 50%; right: -1.05rem; transform: translateY(-50%);
+    color: var(--brand); font-weight: 700; font-size: 1.3rem; line-height: 1; z-index: 3;
+  }
+}
+
+/* Team grid */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem 1.25rem; margin-top: 2.5rem; }
+.team-card { text-align: center; }
+.team-avatar { display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 84px;
+  border-radius: 50%; background: linear-gradient(150deg, var(--brand), var(--brand-dark)); color: #fff;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.35rem; letter-spacing: 0.02em; margin-bottom: 0.85rem; }
+.team-card h3 { font-size: 1rem; color: var(--ink); }
+.team-card p { color: var(--brand); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.2rem; }
+
+/* Track positioning label + CTA */
+.track-position { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--brand); margin-bottom: 0.4rem; }
+.track-cta { margin-top: 2rem; background: var(--ink); color: #fff; border-radius: 1rem; padding: 1.75rem 2rem;
+  display: flex; gap: 1.5rem; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.track-cta h3 { color: #fff; font-size: 1.2rem; }
+.track-cta p { color: rgba(255,255,255,0.72); font-size: 0.96rem; margin-top: 0.35rem; max-width: 34rem; }
+
+/* Curriculum teaser */
+.curriculum-teaser { display: flex; gap: 2rem; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+
+/* Companies logos band */
+.logos-band { margin-top: 3rem; border-top: 1px solid var(--line); padding-top: 2rem; text-align: center; }
+.logos-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); font-weight: 600; margin-bottom: 1.25rem; }
+.logos-row { display: flex; flex-wrap: wrap; gap: 1rem 2.75rem; align-items: center; justify-content: center; }
+.logo-name { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); opacity: 0.5; letter-spacing: -0.01em; }
