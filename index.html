@@ -18,8 +18,16 @@
       <nav class="nav-links" aria-label="Main">
         <a href="#how">Approach</a>
         <a href="#tools">Tools</a>
-        <a class="nav-outline" href="#program">Program</a>
-        <a href="#industries">Industries</a>
+        <a href="#program">Program</a>
+        <div class="nav-dd">
+          <a href="industries/law.html" class="nav-dd-toggle">Industries<span class="nav-dd-caret">▾</span></a>
+          <div class="nav-dd-menu">
+            <a href="industries/law.html">Law firms</a>
+            <a href="industries/accounting.html">Accounting &amp; fintech</a>
+            <a href="industries/recruitment.html">HR &amp; recruitment</a>
+            <a href="industries/marketing.html">Marketing &amp; creative</a>
+          </div>
+        </div>
         <a href="curriculum.html">Curriculum</a>
         <a href="pricing.html">Pricing</a>
         <a href="#faq">FAQ</a>
@@ -34,7 +42,11 @@
     <a href="#how">Approach</a>
     <a href="#tools">Tools</a>
     <a href="#program">Program</a>
-    <a href="#industries">Industries</a>
+    <span class="mobile-label">Industries</span>
+    <a href="industries/law.html">Law firms</a>
+    <a href="industries/accounting.html">Accounting &amp; fintech</a>
+    <a href="industries/recruitment.html">HR &amp; recruitment</a>
+    <a href="industries/marketing.html">Marketing &amp; creative</a>
     <a href="curriculum.html">Curriculum</a>
     <a href="pricing.html">Pricing</a>
     <a href="#faq">FAQ</a>
@@ -54,29 +66,23 @@
   </div>
 </section>
 
-<!-- PROOF STRIP -->
-<section class="bg-white" style="padding:3rem 0">
+<!-- PROOF + STAT (merged) -->
+<section class="bg-white" style="padding:3.5rem 0">
   <div class="container">
-    <figure class="proof-quote proof-quote-solo fade-up">
-      <div class="proof-mark">“</div>
-      <blockquote>Drafting tasks that used to take five hours can now be done in around 45 minutes… I treat AI like a highly capable junior associate: it does the initial drafting, and I verify the reasoning.</blockquote>
-      <figcaption>Counsel at a large firm, posting publicly on r/Lawyertalk. A practitioner's own words, not a Soch client. <a href="industries/law.html#curriculum">More practitioner evidence →</a></figcaption>
-    </figure>
+    <div class="proof-merge">
+      <figure class="proof-quote fade-up">
+        <div class="proof-mark">“</div>
+        <blockquote>Drafting tasks that used to take five hours can now be done in around 45 minutes… I treat AI like a highly capable junior associate: it does the initial drafting, and I verify the reasoning.</blockquote>
+        <figcaption>Counsel at a large firm, posting publicly on r/Lawyertalk. A practitioner's own words, not a Soch client. <a href="industries/law.html#curriculum">More practitioner evidence →</a></figcaption>
+      </figure>
+      <aside class="proof-stat fade-up" data-delay="1">
+        <div class="stat-num">40%</div>
+        <p class="stat-desc">higher output quality in a 758-consultant field experiment when AI was used inside its capability frontier</p>
+        <p class="stat-src">Independent research, Harvard/BCG field experiment. Not Soch's numbers.</p>
+      </aside>
+    </div>
   </div>
 </section>
-
-<!-- STATS -->
-<div class="stats-band">
-  <div class="container">
-    <div class="stat-grid" style="display:block;text-align:center;max-width:42rem;margin:0 auto">
-      <div class="fade-up">
-        <div class="stat-num">40%</div>
-        <p class="stat-desc" style="max-width:34rem;margin:0 auto">higher output quality in a 758-consultant field experiment when AI was used inside its capability frontier</p>
-      </div>
-    </div>
-    <p class="stat-src" style="text-align:center">Independent research, Harvard/BCG field experiment. Not Soch's numbers.</p>
-  </div>
-</div>
 
 <!-- WHY NOW -->
 <section class="bg-white" id="why">
@@ -129,7 +135,7 @@
       <div class="flow-arrow" aria-hidden="true">&rarr;</div>
       <div class="step-box fade-up" data-delay="1"><div class="step-num">Step 2</div><h3>Recommend</h3><p>You get a Claude tooling map: who needs chat, who needs Projects, who needs Cowork, who needs Code, matched to the work.</p></div>
       <div class="flow-arrow" aria-hidden="true">&rarr;</div>
-      <div class="step-box fade-up" data-delay="2"><div class="step-num">Step 3</div><h3>Deploy</h3><p>We set up exactly those tools on your real work, connected to your files, in the Foundations Day or across the Sprint.</p></div>
+      <div class="step-box fade-up" data-delay="2"><div class="step-num">Step 3</div><h3>Deploy</h3><p>We set up exactly those tools on your real work, connected to your files, in the Workshop or across the Sprint.</p></div>
       <div class="flow-arrow" aria-hidden="true">&rarr;</div>
       <div class="step-box fade-up" data-delay="3"><div class="step-num">Step 4</div><h3>Own</h3><p>Named owners, one metric per team, full handover. What gets built here is still being used six months from now.</p></div>
     </div>
@@ -171,6 +177,7 @@
       <div class="team-card"><img class="team-photo" src="assets/team/husnain.jpg" alt="Husnain Shafqat" loading="lazy"><b>Husnain Shafqat</b><span class="team-title">Ops Analyst</span></div>
       <div class="team-card"><img class="team-photo" src="assets/team/muniba.jpg" alt="Muniba Javed" loading="lazy"><b>Muniba Javed</b><span class="team-title">Ops Associate</span></div>
     </div>
+    <p class="team-tagline fade-up" data-delay="2">Operations <span>+</span> AI. We understand both.</p>
   </div>
 </section>
 
@@ -182,15 +189,51 @@
       <h2>Connects to the tools you already use.</h2>
       <p class="lead mt-3">This is what makes it firm capability, not a chat window off to the side. Through the Model Context Protocol (MCP) and native connectors, Claude plugs straight into the stack your team already runs, so the work happens where your files, tasks and inbox already live.</p>
     </div>
-    <div class="grid-3 fade-up" data-delay="1" style="margin-top:2.5rem">
-      <div class="card integ-card"><div class="integ-icon">GD</div><h3>Google Drive</h3><div class="rule-dashed"></div><p>Claude reads, drafts and edits inside the documents, sheets and folders your team already works in, no copy-paste, no re-uploading.</p></div>
-      <div class="card integ-card"><div class="integ-icon">GM</div><h3>Gmail</h3><div class="rule-dashed"></div><p>Triage the inbox, draft replies in your tone and pull the thread that matters, from your real email, not a sandbox.</p></div>
-      <div class="card integ-card"><div class="integ-icon">GC</div><h3>Google Calendar</h3><div class="rule-dashed"></div><p>Schedule-aware assistants that see your week, prep your meetings and turn notes into follow-ups the moment a call ends.</p></div>
-      <div class="card integ-card"><div class="integ-icon">CU</div><h3>ClickUp</h3><div class="rule-dashed"></div><p>Tasks created, updated and summarised straight from Claude, so the work your team delegates lands in the system they already track.</p></div>
-      <div class="card integ-card"><div class="integ-icon">n8n</div><h3>n8n automations</h3><div class="rule-dashed"></div><p>For the multi-step jobs, we wire Claude into n8n so whole workflows run end to end on a trigger or a schedule, not one prompt at a time.</p></div>
-      <div class="card integ-card"><div class="integ-icon">MCP</div><h3>MCP &amp; custom connectors</h3><div class="rule-dashed"></div><p>The Model Context Protocol is the open standard that lets Claude plug into almost any tool you run. If it has an API, we can connect it.</p></div>
+    <div class="app-wall fade-up" data-delay="1">
+      <div class="app-logo"><img src="assets/apps/googledrive.svg" alt="Google Drive" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/gmail.svg" alt="Gmail" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/googlecalendar.svg" alt="Google Calendar" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/googlesheets.svg" alt="Google Sheets" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/googledocs.svg" alt="Google Docs" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/googlemeet.svg" alt="Google Meet" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/slack.svg" alt="Slack" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/notion.svg" alt="Notion" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/clickup.svg" alt="ClickUp" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/asana.svg" alt="Asana" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/trello.svg" alt="Trello" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/jira.svg" alt="Jira" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/linear.svg" alt="Linear" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/airtable.svg" alt="Airtable" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/confluence.svg" alt="Confluence" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/basecamp.svg" alt="Basecamp" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/miro.svg" alt="Miro" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/loom.svg" alt="Loom" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/github.svg" alt="GitHub" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/gitlab.svg" alt="GitLab" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/hubspot.svg" alt="HubSpot" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/salesforce.svg" alt="Salesforce" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/zapier.svg" alt="Zapier" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/make.svg" alt="Make" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/n8n.svg" alt="n8n" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/dropbox.svg" alt="Dropbox" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/box.svg" alt="Box" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/zoom.svg" alt="Zoom" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/stripe.svg" alt="Stripe" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/quickbooks.svg" alt="QuickBooks" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/xero.svg" alt="Xero" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/shopify.svg" alt="Shopify" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/intercom.svg" alt="Intercom" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/zendesk.svg" alt="Zendesk" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/figma.svg" alt="Figma" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/calendly.svg" alt="Calendly" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/typeform.svg" alt="Typeform" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/mailchimp.svg" alt="Mailchimp" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/discord.svg" alt="Discord" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/telegram.svg" alt="Telegram" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/todoist.svg" alt="Todoist" loading="lazy"></div>
+      <div class="app-logo"><img src="assets/apps/hootsuite.svg" alt="Hootsuite" loading="lazy"></div>
     </div>
-    <p style="font-size:0.85rem;color:var(--muted);margin-top:1.25rem">Which connectors your firm needs comes out of the audit, built on the tools your team actually uses day to day.</p>
+    <p style="font-size:0.85rem;color:var(--muted);margin-top:1.5rem;text-align:center">Google Workspace, Slack, ClickUp, n8n, your CRM and dozens more, via native connectors and MCP. Which connectors your firm needs comes out of the audit.</p>
   </div>
 </section>
 
@@ -211,9 +254,9 @@
             <span class="track-tag">1 day · on-site</span>
             <span class="track-tag">AI training</span>
           </div>
-          <h3>AI Foundations Day</h3>
+          <h3>The 10x Employee AI Workshop</h3>
           <div class="track-price">$300 <span>per participant</span></div>
-          <p class="price-note">The broad, foundational option: general AI training that suits any team and any department.</p>
+          <p class="price-note">The broad option: foundational AI training that suits any team and any department.</p>
           <div class="rule-dashed"></div>
           <ul class="check-list">
             <li>Fundamentals of AI, what today's models can and can't do and where they fit your work</li>
@@ -223,7 +266,7 @@
             <li>Every person leaves trained, set up and confident to use AI the next morning</li>
           </ul>
           <div class="rule-dashed"></div>
-          <a class="btn btn-primary" href="#enquire" style="margin-top:0.5rem">Book the Foundations Day</a>
+          <a class="btn btn-primary" href="#enquire" style="margin-top:0.5rem">Book the Workshop</a>
         </div>
       </div>
       <div class="track-card">
@@ -239,7 +282,7 @@
           <p class="price-note">The deep option: we implement AI into your firm's real, department-specific workflows, we build it, your team owns it.</p>
           <div class="rule-dashed"></div>
           <ul class="check-list">
-            <li>Everything in the Foundations Day, audit plus training, as week one</li>
+            <li>Everything in the Workshop, audit plus training, as week one</li>
             <li>Department skill labs where Soch builds each function's own Projects, Skills &amp; Cowork workflows on its real work</li>
             <li>Real-work brief per department, reviewed together</li>
             <li>Demo day: working capability, named owner, one metric per department</li>
@@ -287,14 +330,14 @@
       <div class="full"><label for="f-track">Program</label>
         <select id="f-track" required>
           <option value="" selected disabled>Select a track</option>
-          <option>AI Foundations Day (1 day)</option>
+          <option>The 10x Employee AI Workshop (1 day)</option>
           <option>AI Capability Sprint (4 weeks)</option>
           <option>Not sure, help me choose</option>
         </select>
       </div>
       <div class="full"><label for="f-msg">Anything we should know?</label><textarea id="f-msg" placeholder="Your industry, your tools, what you want to change…"></textarea></div>
       <div class="full">
-        <button class="btn btn-primary btn-lg" type="submit" id="leadform-btn">Request a callback</button>
+        <button class="btn btn-primary btn-lg" type="submit" id="leadform-btn">Submit</button>
         <p class="form-note" id="leadform-note">We'll follow up within two business days.</p>
       </div>
     </form>
@@ -308,46 +351,13 @@
   </div>
 </section>
 
-<!-- INDUSTRIES -->
-<section class="bg-white" id="industries">
-  <div class="container">
-    <div class="section-head fade-up">
-      <span class="eyebrow">Built for your industry</span>
-      <h2>Same foundation. Different curriculum.</h2>
-      <p class="lead mt-3">Week one is the same for every firm. Weeks two to four are built for how your industry actually works. Pick yours to see the full curriculum, the Skills and workflows your teams build, and what practitioners in your field report.</p>
-    </div>
-    <div class="grid-2 fade-up" data-delay="1" style="margin-top:2.5rem">
-      <a class="card card-link" href="industries/law.html">
-        <h3>Law firms &rarr;</h3>
-        <div class="rule-dashed"></div>
-        <p style="font-size:0.95rem;color:var(--slate)">First-draft pleadings and contracts from your own templates, bundle review, a citation-verification protocol, and intake-to-engagement automation. Confidentiality answered first.</p>
-      </a>
-      <a class="card card-link" href="industries/accounting.html">
-        <h3>Accounting &amp; fintech &rarr;</h3>
-        <div class="rule-dashed"></div>
-        <p style="font-size:0.95rem;color:var(--slate)">Document intake that classifies itself, client emails that draft themselves, month-end close assistants and onboarding/KYC packs, minutes per client file, shrunk.</p>
-      </a>
-      <a class="card card-link" href="industries/recruitment.html">
-        <h3>HR &amp; recruitment &rarr;</h3>
-        <div class="rule-dashed"></div>
-        <p style="font-size:0.95rem;color:var(--slate)">CV screening against your real scorecards, interview-note synthesis, outreach in each consultant's voice, and weekly client pipeline digests, more placements per consultant.</p>
-      </a>
-      <a class="card card-link" href="industries/marketing.html">
-        <h3>Marketing &amp; creative &rarr;</h3>
-        <div class="rule-dashed"></div>
-        <p style="font-size:0.95rem;color:var(--slate)">Tone-of-voice engines per client, self-writing reports, briefs and proposals from account history, and content-variant pipelines, twice the output, craft intact.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- CURRICULUM -->
 <section class="bg-white" id="curriculum-teaser">
   <div class="container">
     <div class="section-head fade-up">
       <span class="eyebrow">Curriculum</span>
       <h2>Four modules. From installed to owned.</h2>
-      <p class="lead mt-3">The Foundations Day is Module 1 on its own. The Capability Sprint runs all four, one module per week: Foundation Day, Department Skill Labs, Real-Work Brief, then Rollout &amp; Demo Day. See the full breakdown, week by week, on the curriculum page.</p>
+      <p class="lead mt-3">The Workshop is Module 1 on its own. The Capability Sprint runs all four, one module per week: Foundation Day, Department Skill Labs, Real-Work Brief, then Rollout &amp; Demo Day. See the full breakdown, week by week, on the curriculum page.</p>
     </div>
     <div class="curric-teaser-grid fade-up" data-delay="1">
       <a class="card card-link curric-teaser" href="curriculum.html"><span class="module-num">MODULE 1</span><h3>Foundation Day</h3><p>Week 1 · on-site in Tallinn</p></a>
@@ -518,13 +528,13 @@
         document.getElementById('leadform-success').style.display='block';
       } else {
         btn.disabled=false;
-        btn.textContent='Request a callback';
+        btn.textContent='Submit';
         note.textContent='Something went wrong, please email us at info@withsoch.com.';
         note.style.color='#ff5c35';
       }
     }).catch(function(){
       btn.disabled=false;
-      btn.textContent='Request a callback';
+      btn.textContent='Submit';
       note.textContent='Could not connect, please email us at info@withsoch.com.';
       note.style.color='#ff5c35';
     });

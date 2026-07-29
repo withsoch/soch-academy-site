@@ -1300,6 +1300,123 @@ div.foundation-box h3 { color: #fff; font-family: 'Instrument Sans', sans-serif;
   .logo-track { animation: none; flex-wrap: wrap; justify-content: center; gap: 1rem; }
 }
 
+/* ── Review round 2 additions ───────────────────────────── */
+
+/* Merged proof quote + stat */
+.proof-merge {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+@media (max-width: 860px) { .proof-merge { grid-template-columns: 1fr; } }
+.proof-stat {
+  background: var(--charcoal);
+  color: #fff;
+  border-radius: 1.25rem;
+  padding: 2.1rem 1.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.proof-stat .stat-num { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(2.6rem, 4vw, 3.6rem); font-weight: 600; color: var(--brand); line-height: 1; margin-bottom: 0.6rem; }
+.proof-stat .stat-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.55; }
+.proof-stat .stat-src { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 1rem; }
+
+/* Team tagline */
+.team-tagline {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.team-tagline span { color: var(--brand); }
+
+/* App logo wall (connectors) */
+.app-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+@media (max-width: 640px) { .app-wall { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); } }
+.app-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 74px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  transition: border-color 0.18s, transform 0.18s var(--ease-soft), box-shadow 0.18s;
+}
+.app-logo:hover { border-color: rgba(28,43,38,0.28); transform: translateY(-2px); box-shadow: 0 8px 20px -10px rgba(28,43,38,0.18); }
+.app-logo img {
+  height: 26px;
+  width: 26px;
+  opacity: 0.62;
+  filter: grayscale(1);
+  transition: opacity 0.18s, filter 0.18s;
+}
+.app-logo:hover img { opacity: 1; filter: none; }
+
+/* Nav dropdown (Industries) */
+.nav-dd { position: relative; display: flex; align-items: center; }
+.nav-dd > .nav-dd-toggle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--slate);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: background 0.15s, color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.nav-dd:hover > .nav-dd-toggle { background: var(--mist); color: var(--ink); }
+.nav-dd-caret { font-size: 0.7rem; line-height: 1; }
+.nav-dd-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 15rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 30px -10px rgba(28,43,38,0.18);
+  padding: 0.4rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.15rem;
+  z-index: 60;
+}
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { display: flex; }
+.nav-dd-menu a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--slate);
+  text-decoration: none;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.5rem;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-dd-menu a:hover { background: var(--mist); color: var(--ink); }
+
+/* Mobile menu group label */
+.mobile-label {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.9rem 1rem 0.25rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fade-up { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
