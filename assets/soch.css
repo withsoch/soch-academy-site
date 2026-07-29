@@ -1131,6 +1131,175 @@ div.foundation-box h3 { color: #fff; font-family: 'Instrument Sans', sans-serif;
   .proof-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Revision additions ─────────────────────────────────── */
+
+/* Larger eyebrow (B2 "Why now?") */
+.eyebrow-lg { font-size: 0.95rem; padding: 0.4rem 0.9rem; }
+
+/* Program nav as an outlined button (B3) */
+.nav-links a.nav-outline {
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  font-weight: 600;
+}
+.nav-links a.nav-outline:hover { border-color: var(--ink); background: transparent; }
+
+/* Solo proof quote (after founding-cohort panel removed) */
+.proof-quote-solo { max-width: 54rem; margin-inline: auto; }
+
+/* Venn diagram (C1) */
+.venn { width: 100%; max-width: 340px; height: auto; display: block; margin: 0.75rem auto 0; }
+.venn-circles circle {
+  fill: var(--brand);
+  fill-opacity: 0.15;
+  stroke: var(--brand);
+  stroke-opacity: 0.55;
+  stroke-width: 1.5;
+  mix-blend-mode: multiply;
+}
+.venn-lbl { font-family: 'Poppins', system-ui, sans-serif; font-weight: 600; font-size: 16px; fill: var(--ink); text-anchor: middle; }
+.venn-core { font-family: 'Instrument Sans', sans-serif; font-weight: 700; font-size: 12px; fill: var(--brand-dark); text-anchor: middle; letter-spacing: 0.02em; }
+.venn-legend { margin-top: 1.1rem; display: grid; gap: 0.45rem; }
+.venn-legend div { font-size: 0.86rem; color: var(--slate); }
+.venn-legend b { color: var(--ink); font-family: 'Instrument Sans', sans-serif; font-weight: 700; margin-right: 0.35rem; }
+
+/* Process flow with arrows (C2) */
+.steps-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+.steps-flow .step-box { flex: 1; min-width: 0; }
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: var(--brand);
+  font-size: 1.6rem;
+  line-height: 1;
+  align-self: center;
+}
+@media (max-width: 900px) {
+  .steps-flow { flex-direction: column; }
+  .steps-flow .flow-arrow { transform: rotate(90deg); padding: 0.15rem 0; }
+}
+
+/* Integration / connector cards (A9) */
+.integ-card { display: flex; flex-direction: column; }
+.integ-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.65rem;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+  border: 1px solid var(--line);
+}
+.integ-card p { font-size: 0.95rem; color: var(--slate); }
+
+/* Team credibility grid (A10) */
+.team-intro h3 { font-size: 1.35rem; }
+.team-intro p { color: var(--slate); margin-top: 0.4rem; }
+.team-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1.75rem;
+}
+@media (min-width: 640px)  { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 960px)  { .team-grid { grid-template-columns: repeat(4, 1fr); } }
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 0.875rem;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.team-card:hover { border-color: rgba(28,43,38,0.25); }
+.team-avatar, .team-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  margin: 0 auto 0.9rem;
+  object-fit: cover;
+  object-position: top;
+}
+.team-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--peach), var(--mist));
+  color: var(--brand-dark);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.team-card b { display: block; color: var(--ink); font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 1rem; }
+.team-title { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* Curriculum teaser cards (F2) */
+.curric-teaser-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2.5rem;
+}
+@media (min-width: 960px) { .curric-teaser-grid { grid-template-columns: repeat(4, 1fr); } }
+.curric-teaser { gap: 0.6rem; padding: 1.5rem; }
+.curric-teaser .module-num { align-self: flex-start; }
+.curric-teaser h3 { font-size: 1.1rem; font-family: 'Instrument Sans', sans-serif; font-weight: 600; color: var(--ink); }
+.curric-teaser p { font-size: 0.85rem; color: var(--muted); }
+.curric-teaser:hover { border-color: var(--ink); }
+
+/* Companies logo marquee (A12) */
+.logos-section { overflow: hidden; }
+.logos-head { text-align: center; max-width: 44rem; margin-inline: auto; }
+.logo-marquee {
+  margin-top: 3rem;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logo-scroll 34s linear infinite;
+}
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+.logo-item {
+  flex: 0 0 auto;
+  padding: 0 2.75rem;
+  display: flex;
+  align-items: center;
+}
+.logo-item img {
+  height: 30px;
+  width: auto;
+  opacity: 0.55;
+  filter: grayscale(1);
+  transition: opacity 0.2s;
+}
+.logo-item img:hover { opacity: 1; filter: none; }
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fade-up { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
