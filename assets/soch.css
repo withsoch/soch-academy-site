@@ -1337,11 +1337,11 @@ div.foundation-box h3 { color: #fff; font-family: 'Instrument Sans', sans-serif;
 }
 .team-tagline span { color: var(--brand); }
 
-/* Thin brand divider between sections */
+/* Thin divider between sections (full-bleed, grey) */
 .brand-divider {
   border: 0;
-  height: 2px;
-  background: var(--brand);
+  height: 1px;
+  background: #cfcfcf;
   width: 100%;
   margin: 0;
 }
