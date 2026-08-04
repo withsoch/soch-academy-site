@@ -1210,13 +1210,15 @@ div.foundation-box h3 { color: #fff; font-family: 'Instrument Sans', sans-serif;
 .team-intro h3 { font-size: 1.35rem; }
 .team-intro p { color: var(--slate); margin-top: 0.4rem; }
 .team-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.25rem;
-  grid-template-columns: repeat(2, 1fr);
   margin-top: 1.75rem;
 }
-@media (min-width: 640px)  { .team-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 960px)  { .team-grid { grid-template-columns: repeat(4, 1fr); } }
+.team-card { flex: 0 1 calc(50% - 0.625rem); }
+@media (min-width: 640px)  { .team-card { flex-basis: calc(33.333% - 0.834rem); } }
+@media (min-width: 960px)  { .team-card { flex-basis: calc(25% - 0.9375rem); } }
 .team-card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -1334,6 +1336,15 @@ div.foundation-box h3 { color: #fff; font-family: 'Instrument Sans', sans-serif;
   letter-spacing: -0.01em;
 }
 .team-tagline span { color: var(--brand); }
+
+/* Thin brand divider between sections */
+.brand-divider {
+  border: 0;
+  height: 2px;
+  background: var(--brand);
+  width: 100%;
+  margin: 0;
+}
 
 /* App logo wall (connectors) */
 .app-wall {
