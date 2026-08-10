@@ -1,7 +1,12 @@
 # Deployment — academy.withsoch.com
 
-Static HTML site. No build step, no dependencies. `vercel.json` sets
-`cleanUrls: true` so `/pricing` serves `pricing.html`.
+Static HTML site. No build step, no dependencies. `vercel.json` does clean URLs with
+an explicit rewrite (`/:path` -> `/:path.html`) plus `.html` -> clean redirects.
+
+**Do not replace that with `cleanUrls: true`.** Under `cleanUrls`, `vercel build`
+renames `index.html` to the path `index` and emits a 308 sending `/index` back to `/` —
+which then has nothing to serve. Every subpage works and the site root 404s. A root
+rewrite does not beat the rename; doing clean URLs explicitly is what stops it.
 
 ## How it deploys
 
@@ -43,6 +48,41 @@ cat .vercel/project.json          # -> orgId + projectId for the secrets above
 Do **not** connect this project to Git in the Vercel dashboard. If you do, Vercel will
 try to read the private org repo and the Hobby restriction returns. The project must
 stay Git-disconnected and receive deploys only from this workflow.
+
+## Gotcha: deploys must run OUTSIDE the Git work tree
+
+The workflow copies `.vercel` into `RUNNER_TEMP` and deploys from there. That is load
+bearing, not tidiness.
+
+The Vercel CLI stamps Git metadata onto any deploy it runs inside a Git work tree —
+including a prebuilt deploy with no repo connection. Vercel then requires the **commit
+author** to hold a seat on the team. A Hobby team has exactly one seat
+(`info@withsoch.com`), so a push authored by anyone else returns:
+
+```
+readyState: BLOCKED
+seatBlock:  { blockCode: "TEAM_ACCESS_REQUIRED" }
+readyStateReason: "Git author <email> must have access to the team ... to create deployments."
+```
+
+Two traps when this happens:
+
+- **It hangs, it does not fail.** Vercel marks the deploy BLOCKED immediately but the
+  CLI waits ~13 minutes before giving up. A deploy step running far past its usual ~40s
+  is this, until proven otherwise.
+- **It is invisible in the UI and the Actions log.** The reason only appears in the API:
+  `GET https://api.vercel.com/v13/deployments/<url>?teamId=<team>` → `readyStateReason`.
+
+Deploying from a directory with no `.git` stamps no author, so the deploy is attributed
+to the token owner — which is what it actually is.
+
+If Soch ever moves to Pro, add every committer to the Vercel team and this whole section
+becomes unnecessary.
+
+## Gotcha: preview URLs are SSO-protected
+
+Preview deployments 302 to `vercel.com/sso-api`, so `curl` cannot smoke-test them.
+Verify against the production alias `soch-academy-site.vercel.app` instead.
 
 ## Rotating the token
 
