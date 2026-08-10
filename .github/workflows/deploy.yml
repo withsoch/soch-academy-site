@@ -61,8 +61,22 @@ jobs:
       - name: Build
         run: vercel build ${{ steps.env.outputs.prod_flag }} --token=${{ secrets.VERCEL_TOKEN }}
 
+      # The Vercel CLI stamps Git metadata onto a deploy whenever it runs inside a
+      # Git work tree - including prebuilt CLI deploys with no repo connection.
+      # Vercel then requires the commit author to hold a seat on the team, and a
+      # Hobby team has exactly one. Any commit not authored by info@withsoch.com
+      # comes back readyState=BLOCKED / TEAM_ACCESS_REQUIRED. Staging the artifact
+      # outside the work tree means no author is stamped and the deploy is
+      # attributed to the token owner, which is what it actually is.
+      - name: Stage artifact outside the Git work tree
+        run: |
+          mkdir -p "$RUNNER_TEMP/deploy"
+          cp -r .vercel "$RUNNER_TEMP/deploy/"
+          test ! -e "$RUNNER_TEMP/deploy/.git"
+
       - name: Deploy prebuilt artifact
         id: deploy
+        working-directory: ${{ runner.temp }}/deploy
         run: |
           url=$(vercel deploy --prebuilt ${{ steps.env.outputs.prod_flag }} \
             --token=${{ secrets.VERCEL_TOKEN }})
