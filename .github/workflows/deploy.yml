@@ -32,9 +32,9 @@ jobs:
     # `github.ref == refs/heads/main` on a push is the only thing that ships to
     # the production domain. PRs targeting main still get preview URLs only.
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
