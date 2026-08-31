@@ -69,6 +69,33 @@ A-record change, only a `_vercel` TXT verification.
 `_vercel.withsoch.com` holds one TXT record per Vercel-verified subdomain. They stack —
 when adding one, **add**, never replace, or you break the other sites' verification.
 
+## Link previews (Open Graph)
+
+`<link rel="icon">` only feeds the browser tab. WhatsApp, Slack, LinkedIn, iMessage and
+X ignore it entirely and read Open Graph / Twitter Card meta tags instead — so a page
+with a working favicon can still paste as a blank grey card. Every real page now carries
+`og:*` + `twitter:*` (added 2026-08-31, when previews were showing no image at all).
+
+Two rules when editing them:
+
+- **`og:image` and `twitter:image` must be absolute URLs** (`https://academy.withsoch.com/...`).
+  Relative paths are silently dropped by most scrapers — this is the single most common
+  way to break previews.
+- **`og:image` must be opaque.** The preview card is `assets/og-image.png`, a 1200x630
+  PNG with `assets/logo-mark.png` flattened onto the cream brand background. Do not point
+  `og:image` straight at `logo-mark.png`: it is a 512x512 RGBA file, and transparency
+  renders as black on WhatsApp and Slack dark mode. Regenerate the card by re-flattening
+  the mark, never by dropping the alpha channel.
+
+`favicon.ico` at the repo root is deliberate — some crawlers and older clients request
+`/favicon.ico` blindly, ignoring the `<link>` tags. Vercel serves static files before
+the `/:path` -> `/:path.html` rewrite in `vercel.json`, so it is not caught by that.
+
+After changing any of this, previews stay stale until each platform's cache is cleared:
+re-scrape at `developers.facebook.com/tools/debug` and `linkedin.com/post-inspector`.
+WhatsApp and Slack have no manual purge; append `?v=2` to the pasted link to force a
+fresh fetch when testing.
+
 ## Related
 
 The lead form posts to `https://sochconsulting.app.n8n.cloud/webhook/academy-lead`
