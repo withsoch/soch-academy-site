@@ -81,11 +81,14 @@ Two rules when editing them:
 - **`og:image` and `twitter:image` must be absolute URLs** (`https://academy.withsoch.com/...`).
   Relative paths are silently dropped by most scrapers — this is the single most common
   way to break previews.
-- **`og:image` must be opaque.** The preview card is `assets/og-image.png`, a 1200x630
-  PNG with `assets/logo-mark.png` flattened onto the cream brand background. Do not point
-  `og:image` straight at `logo-mark.png`: it is a 512x512 RGBA file, and transparency
-  renders as black on WhatsApp and Slack dark mode. Regenerate the card by re-flattening
-  the mark, never by dropping the alpha channel.
+- **`og:image` must be opaque.** The preview card is `assets/og-image.png`: 1200x630,
+  cream (`--cream`) background, `logo-lockup.png` top left, the headline in Poppins
+  SemiBold, a line of Instrument Sans body copy, the domain in `--brand`, and
+  `logo-mark.png` ghosted at 7% opacity bleeding off the right edge. Rendered at 2x and
+  downsampled so the type stays crisp. Do not point `og:image` straight at
+  `logo-mark.png`: it is a 512x512 RGBA file, and transparency renders as black on
+  WhatsApp and Slack dark mode. Any replacement must be flattened onto a solid
+  background, never just stripped of its alpha channel.
 
 `favicon.ico` at the repo root is deliberate — some crawlers and older clients request
 `/favicon.ico` blindly, ignoring the `<link>` tags. Vercel serves static files before
